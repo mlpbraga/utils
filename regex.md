@@ -23,7 +23,9 @@ encontrar
 
 `\d` -> um dígito, atalho pra [0-9]
 
-`[.-]` -> ponto ou hífen (pode ser u lizado para quaisquer caracteres) [.-]* -> ponto ou hífen zero, uma ou mais vezes
+`[.-]` -> ponto ou hífen (pode ser u lizado para quaisquer caracteres) 
+
+`[.-]*` -> ponto ou hífen zero, uma ou mais vezes
 
 `[.-]{1}` -> ponto ou hífen uma vez
 
