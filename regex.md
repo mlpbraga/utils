@@ -47,8 +47,8 @@ palavra.
 
 **Todos os quan fiers são gananciosos por padrão.** Isso significa que eles automáticamente selecionam o máximo de caracteres. Lembrando que temos os seguintes quan fiers:
 * ? (zero ou um caractere)
-* + (um ou mais caracteres)
-* * (zero ou mais caracteres)
+* \+ (um ou mais caracteres)
+* \* (zero ou mais caracteres)
 * {n,m} (min n, max m caracteres)
 
 Podemos utilizar um `?` logo após o quantifier, deixando-o preguiçoso.
@@ -112,8 +112,11 @@ Na Alura existe um filtro de permissões para habilitar alguns recursos para usu
 O email deve ter um @ e terminar com caelum.com.br ou alura.com.br. O nome do usuário (tudo antes do @ ) tem apenas letras minúsculas, pode ter um número no final e tem de 5 a 15 caracteres.
 
 Por exemplo:
+
 super.mario@caelum.com.br extrai super.mario
+
 donkey.kong@alura.com.br extrai donkey.kong
+
 bowser1@alura.com.br extrai bowser1
 
 Mais uma dica, para definir dentro de um grupo que queremos um OU outro usamos o
