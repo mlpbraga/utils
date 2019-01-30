@@ -39,6 +39,7 @@
 * **abrir o arquivo e navegar por ele com as setas do teclado**: `less arquivo.txt` fechamos o less com o comando `q` do teclado
 #
 **Uso do VIM**
+
 Se você digitar `vim arquivo.txt` no terminal e não existir nenhum arquivo com o nome `arquivo.txt` no diretório onde você está, o vi criará um arquivo com esse nome. Caso esse arquivo já exista, o vi irá apenas abrir esse arquivo com todo o seu conteúdo.
 
 Quando você abre o arquivo, o vim permite que você navege por ele usando as setas do teclado, esse é o modo de navegação.
