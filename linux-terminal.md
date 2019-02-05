@@ -4,7 +4,7 @@
 * Diretórios correspondem ao que você conhece como as pastas do seu computador
 * Os caminhos de diretórios são separados pos `/` e são representados da esquerda para a direita simulando o repositório mais externo e o mais interno respectivamente
 #
-**Comandos**
+**Comandos simples**
 * **exibir o manual de como utilizar um comando**: `man comando`
 * **limpar a tela do terminal**: `clear`
 * **exibir o caminho do diretório atual**: `pwd`
@@ -21,6 +21,7 @@
 * **exibir uma mensagem no terminal**: 
   * exibir cada palavra como argumento: `echo Ola`
   * exibir uma string: `echo "Olá"`
+* **contar o número de palavras, caracteres e linhas que um arquivo possui**: `wc -w nome.txt`, `wc -c nome.txt`, `wc -l nome.txt`
 * **escrever um texto em um arquivo**:
   * **sobrescrever conteúdo atual do arquivo**: `echo "Texto de teste" > teste.txt`
   * **adicionar texto ao final do arquivo**: `echo "mais um texto" >> teste.txt`
@@ -51,3 +52,74 @@ Para salvar quaisquer alterações feitas no arquivo, você deve digitar `:w` e 
 Para buscar por termos no vim, presione o botão `/` e digite sua busca, se tiverem mais resultados alm do que você encontrou, você pdoe navegar por eles apertando `n`.
 
 # 
+**Gerenciamento de processos**
+
+* **listar quais processos estão em execução**: 
+    * **exibir os processos de terminal**: `ps`
+    * **exibir todos os processos da máquina**: `ps -e`
+    * **exibir todos os processos da máquina com informaçes** `ps -ef`
+    * **exibir informações do processo específico**: `ps -ef | grep firefox`
+    * **exibir processos de maneira gráfica**: `pstree`
+* **solicitar o fechamento de um processo por id**: `kill ID` ex: `kill 1221`
+    * **força a finalização do processo**: `kill -9 ID`
+    * **sinaliza que o programa deve ser finalizado apenas depois de realizar algumas tarefas**: `kill -TERM ID` *Obs: quando não indicamos nenhum sinal para o comando kill, é o sinal TERM que é executado por padrão*
+    * **matar todos os processos de um mesmo programa**: `killall nomedoprograma`
+* **lista a situação dos processos, do processador e da memória**: `top` *Obs: A lista de processos está organizada pelo uso da CPU, e se atualiza dependendo desse uso.*
+    * **mostrar apenas os processos de um determinado usuário**: `top -u usuario`
+    * **acompanhar as informações de um processo específico**: `top -p ID`
+    * *Obs: Por padrão, o top atualiza a tela com novas informações sobre os processos a cada 3 segundos. Para alterar esse tempo basta pressionar d enquanto estiver rodando o top, inserir o valor desejado e pressionar a tecla Enter: `Change delay from 3,0 to 1`*
+* **visualizar processos que estão parados**: `jobs`
+* **enviar processo para ser executado em background**: `bg ID` 
+* **inicializar o processo já em background**: `nomedoprocesso &`
+* **trazer processo para ser executado em foreground**: `fg ID`
+
+#
+**Instalar programas**
+
+* **ver as versões atualizadas dos programas que estão disponíveis para instalação**: sudo apt-get update
+* **instalar programas**: `sudo apt-get install programa`
+* **remover programas**: `sudo apt-get remove programa`
+* **instalar programa usando dpkg**: `sudo dpkg -i pacote.deb`
+* **desinstalar programa usando dpkg**: `sudo dpkg -r pacote`
+
+*Obs: duas formas de instalar e desinstalar programas no Linux:
+
+1. Via apt: quando o programa já está disponibilizado na central do Sistema Operacional Linux.
+
+2. Via dpkg: quando baixamos pelo navegador da internet um pacote .deb do programa.*
+
+#
+**Criando um programa**
+
+1. Criar um arquivo gedit em background: `gedit dorme &`
+2. Inserir o conteúdo:
+```sh
+echo "Vou dormir"
+sleep 5
+echo "Terminei de dormir"
+```
+3. Executar o programa: `sh dorme`
+
+#
+**Permissões**
+
+Os arquivos no Linux podem ter permissões para leitura (r), escrita (w) e execução (x). Essas permissões são distribuídas para o dono do arquivo, ao grupo de usuários e também para outros usuários. Os diretórios (d) sofrem das mesmas regras.
+
+* **adicionar permissão de execução para o arquivo dorme**: `chmod +x dorme`
+* **localiza onde está o programa**: `locate firefox`
+* **exibe onde os programas estão instalados**: `wich firefox`
+* **atualizar senha do usuário linux**: `passwd`
+* **adicionar novo usuário**: `adduser novo`
+* **logar no usuário novo**: `su novo`
+* **tirar permissões dos arquivos do novo para os demais usuários**: `chmod o-rx novo` *obs: Neste caso, o comando chmod é seguindo de alguns operadores, que são: o para others, ou seja, outros usuários, o - indica uma remoção de permissão, o r e x indicam permissões de leitura e execução. Se quiséssemos tirar permissões do próprio usuário, seria: u-rx e para o grupo seria: g-rx.*
+
+Para executarmos o programa dorme como todos os outros, fazemos:
+
+```sh
+sudo mv dorme /usr/bin
+```
+ou 
+
+```sh
+PATH=$PATH:caminho-do-arquivo
+```
