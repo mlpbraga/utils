@@ -12,7 +12,7 @@ $ npm i eslint -D
   ...
   "scripts": {
     ...
-    "lint": "eslint",
+    "lint": "eslint ./src --fix",
     ...
   }
   ...
@@ -21,7 +21,7 @@ $ npm i eslint -D
 
 3. Inicializar o lint no projeto rodando:
 ```
-npm run lint -- --init
+$ npm run lint -- --init
 ```
 
 Deve ser gerado um arquivo `.eslintrc` com as suas configurações de lint. O conteúdo dele deve ser similar a esse:
@@ -45,4 +45,9 @@ Deve ser gerado um arquivo `.eslintrc` com as suas configurações de lint. O co
     "rules": {
     }
 }
+```
+
+O comando para rodar o lint no seu projeto é:
+```sh
+$ npm run lint
 ```
