@@ -12,6 +12,7 @@
 - **numeric(p,d)** - bom pra monetário, notas, usa ponto fixo
 - **float** - numero decimal de 4 bytes de precisão
 - **double** - número decimal de 8 bytes de precisão
+- **int, smallint, real**...
 
 **- criar um banco de dados:** 
 ```sql
