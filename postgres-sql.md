@@ -7,8 +7,8 @@
 ## SQL
 
 **tipos de dados**
-- **char** - aloca todo o espaço máximo de bytes de uma vez
-- **varchar** - aloca o inicialmente o tamanho minimo necessário de bytes, depois vai alocando ponteiros dinâmicamente
+- **char(n)** - aloca todo o espaço máximo de n bytes de uma vez
+- **varchar(n)** - aloca o inicialmente o tamanho minimo necessário de bytes, depois vai alocando ponteiros dinâmicamente até atingir o máximo n
 - **numeric(p,d)** - bom pra monetário, notas, usa ponto fixo
 - **float** - numero decimal de 4 bytes de precisão
 - **double** - número decimal de 8 bytes de precisão
